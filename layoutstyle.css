@@ -2,7 +2,6 @@ html{
     height: 100%;
 }
 
-
 body {
     margin: 0;
     min-height: 100%;
@@ -10,19 +9,9 @@ body {
     flex-direction: column;
   }
 
-header{
-    flex: 175px;
-    max-height: 175px;
-}
-
-body > section {
-    flex: 1;
-  }
-
 #head-image{
     margin: 15px;
 }
-
 
 #content{
     flex: 4;

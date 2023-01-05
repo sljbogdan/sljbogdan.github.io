@@ -1,9 +1,28 @@
 function hidePage(id) {
+    console.info('hide page', id);
     document.getElementById(id).style.display='none';
 }
 
+function highlight(page){
+        page.style.borderColor = '#0000ff';
+    setTimeout(function(){
+        page.style.borderColor = '#e099dd';
+    }, 200);
+    setTimeout(function(){
+        page.style.borderColor = '#e0dfdc';
+    }, 300);
+}
+
 function showPage(show) {
-    document.getElementById(show).style.display='block';
+    console.info('show page', show);
+    var page = document.getElementById(show);
+    console.info('show', page);
+    if(page){
+        page.style.display='block';
+        highlight(page);
+    } else{
+        console.warm('pagina cu id-ul %s nu exista', show);
+    }
 }
 
 function showHome() {
