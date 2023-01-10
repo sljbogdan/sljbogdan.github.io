@@ -54,6 +54,8 @@ body{
     text-decoration: none;
     padding: 0px 15px 0px 15px;
     color: white;
+    border-radius: .2em;
+    transition: 0.5s;
 
 }
 #top-menu-bar a:visited{
