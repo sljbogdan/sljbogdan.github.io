@@ -24,8 +24,15 @@ function show(id) {
         page.style.display='block';
         highlight(page);
     } else{
-        console.warm('pagina cu id-ul %s nu exista', id);
+        console.warn('pagina cu id-ul %s nu exista', id);
     }
+
+    var oldLink = document.querySelector("a[data-page].active");
+    if(oldLink){
+        oldLink.classList.remove("active");
+    }
+    var link = document.querySelector("a[data-page=" + id +"]");
+    link.classList.add("active");
 }
 
 function hideAllPages(){
@@ -46,5 +53,13 @@ function hideAllPages(){
 function showPage(id){
     hideAllPages();
     show(id);
-
 }
+
+ show('home');
+
+document.querySelector('#top-menu-bar').addEventListener('click', function(e){ 
+    if( e.target.matches("a")){
+        var id = e.target.getAttribute("data-page");
+        showPage(id);
+    }
+})
