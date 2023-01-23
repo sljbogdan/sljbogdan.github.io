@@ -123,3 +123,20 @@ footer p {
     margin: 8px;
 }
 
+.favorit{
+    color:rgb(72, 0, 255);
+}
+
+#skills li span {
+    font-weight: normal;
+    color: white;
+    font-style: normal;
+    font-size: 0.9em;
+    background-color: rgb(116, 180, 208);
+    border-radius: 50%;
+    display: inline-block;
+    padding: 1px 5px;
+    min-width: 10px;
+    text-align: center;
+    
+}
