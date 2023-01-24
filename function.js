@@ -4,22 +4,22 @@ function hide(id) {
 
 function highlight(page){
         page.style.borderColor = '#000099';
-    setTimeout(function(){
+    setTimeout(() => {
         page.style.borderColor = '#000077';
     }, 100);
-    setTimeout(function(){
+    setTimeout(() => {
         page.style.borderColor = '#000055';
     }, 150);
-    setTimeout(function(){
+    setTimeout(() => {
         page.style.borderColor = '#000033';
     }, 200);
-    setTimeout(function(){
+    setTimeout(() => {
         page.style.borderColor = '#e0dfdc';
     }, 300);
 }
 
 function show(id) {
-    var page = document.getElementById(id);
+    const page = document.getElementById(id);
     if(page){
         page.style.display='block';
         highlight(page);
@@ -27,17 +27,17 @@ function show(id) {
         console.warn('pagina cu id-ul %s nu exista', id);
     }
 
-    var oldLink = document.querySelector("a[data-page].active");
+    const oldLink = document.querySelector("a[data-page].active");
     if(oldLink){
         oldLink.classList.remove("active");
     }
-    var link = document.querySelector("a[data-page=" + id +"]");
+    const link = document.querySelector("a[data-page=" + id +"]");
     link.classList.add("active");
 }
 
 function hideAllPages(){
-    var pages = Array.from(document.getElementsByClassName('page'));
-    pages.forEach(function(page){
+    const pages = Array.from(document.getElementsByClassName('page'));
+    pages.forEach((page) => {
         hide(page.id);
     });
 
@@ -57,20 +57,20 @@ function showPage(id){
 
  show('skills');
 
-document.querySelector('#top-menu-bar').addEventListener('click', function(e){ 
+document.querySelector('#top-menu-bar').addEventListener('click', (e) => { 
     if( e.target.matches("a")){
-        var id = e.target.getAttribute("data-page");
+        const id = e.target.getAttribute("data-page");
         showPage(id);
     }
 })
 
 
-var skills = [];
+window.skills = [];
 
 function showSkills(skills){
-    var skillsHtml = skills.map(function(skill){
-        var favorit = skill.favorit ? 'class=favorit' : '';
-        var endorsements = skill.endorsements > 5 ? `<span>${skill.endorsements}</span>` : '';
+    const skillsHtml = skills.map((skill) => {
+        const favorit = skill.favorit ? 'class=favorit' : '';
+        const endorsements = skill.endorsements > 5 ? `<span>${skill.endorsements}</span>` : '';
         return `<li ${favorit}> ${skill.name} ${endorsements} </li>`
     }).join('');
 
@@ -78,24 +78,25 @@ function showSkills(skills){
 }
 
 // function sortSkillsByName(a, b){
-//     var aName = a.name.toUpperCase();
-//         var bName = b.name.toUpperCase();
-//         if(aName < bName){
-//             return -1;
-//         }
-//         if(aName > bName){
-//             return 1;
-//         }
-//         return 0;
+//      const aName = a.name.toUpperCase();
+//      const bName = b.name.toUpperCase();
+//      if(aName < bName){
+//          return -1;
+//      }
+//      if(aName > bName){
+//          return 1;
+//      }
+//      return 0;
 // }
 
 function sortSkillsByEndorsements(a, b){
     return b.endorsements - a.endorsements;
 }
 
-fetch("data/skills.json").then(function(response){
+fetch("data/skills.json").then((response) => {
     return response.json();
-}).then(function(skills){
+}).then((skills) => {
     skills.sort(sortSkillsByEndorsements);
+    window.skills = skills;
     showSkills(skills);
 })
