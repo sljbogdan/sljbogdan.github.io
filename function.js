@@ -53,7 +53,7 @@ function showPage(id){
     show(id);
 }
 
- show('languages');
+ show('home');
 
 document.querySelector('#top-menu-bar').addEventListener('click', e => { 
     if( e.target.matches("a")){

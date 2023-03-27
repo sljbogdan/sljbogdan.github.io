@@ -27,6 +27,32 @@ body{
     margin: 0;
 }
 
+#side-menu > section {
+    margin-bottom: 10px;
+    padding: 10px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+}
+
+#side-menu > section h2 {
+    margin: 0 0 10px 0;
+    color: #334455;
+}
+
+#email{
+    padding: 1px 2px;
+    display: block;
+}
+
+#name{
+    padding: 1px 2px;
+    display: block;
+}
+
+#contactButton{
+    margin-top: 5px;
+}
+
 #job-title{
     color: #334455;
     font-weight: bold;
@@ -36,7 +62,7 @@ body{
 #tableLanguages{
     border: 1px solid;
     border-collapse: collapse;
-    width: 50%;
+    width: 40%;
 }
 #tableLanguages td{
     border: 1px solid;
@@ -44,6 +70,7 @@ body{
 
 #tableLanguages thead{
     text-align: center;
+    background-color: #b3ecff;
 }
 
 
@@ -89,10 +116,23 @@ body{
     display: none;
 }
 
-.page 
+#projects li{
+    padding: 5px;
+}
 
-.page h3{
+#projects a{
+    color: #334455;
+    text-decoration: none;
+}
+
+#projects a:hover{
+    text-decoration: underline;
+}
+
+
+.page h2{
     margin: 0 0 5px 0;
+    color: #334455;
 }
 
 .page ul{
@@ -133,7 +173,7 @@ footer p {
 }
 
 .favorit{
-    color:rgb(72, 0, 255);
+    color:rgb(61, 121, 225);
 }
 
 #skills li span {
@@ -146,6 +186,9 @@ footer p {
     display: inline-block;
     padding: 1px 5px;
     min-width: 10px;
-    text-align: center;
-    
+    text-align: center; 
+}
+
+#skills li{
+    padding: 2px;
 }
