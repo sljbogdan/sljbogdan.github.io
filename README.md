@@ -1,2 +1,2 @@
-# sljbogdan.github.io
-My HTML CV
+# Demo
+https://sljbogdan.github.io/
